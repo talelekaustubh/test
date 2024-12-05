@@ -12,7 +12,7 @@ pipeline {
                 echo 'python version:$PYTHON_VERSION'
             }
         }
-        stage('Build') {
+        stage('VERSION') {
             steps {
                 echo 'django version:$DJANGO_VERSION'
             }
