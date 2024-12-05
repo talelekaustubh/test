@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'django --version'
+                echo 'python version:$PYTHON_VERSION'
             }
         }
            
