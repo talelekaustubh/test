@@ -9,12 +9,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                echo 'python version:$PYTHON_VERSION'
+                sh 'python --version'
             }
         }
         stage('VERSION') {
             steps {
-                echo 'django version:$DJANGO_VERSION'
+                sh 'python -m django version'
             }
         }
            
@@ -26,3 +26,6 @@ pipeline {
         }
    }
 }
+
+
+
