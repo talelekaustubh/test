@@ -12,6 +12,11 @@ pipeline {
                 sh 'python3 --version'
             }
         }
+        stage('Install Dependencies') {
+            steps {
+               sh 'pip install django'
+           }
+         }
         stage('VERSION') {
             steps {
                 sh 'python3 -m django version'
