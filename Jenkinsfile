@@ -9,12 +9,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'python --version'
+                sh 'python3 --version'
             }
         }
         stage('VERSION') {
             steps {
-                sh 'python -m django version'
+                sh 'python3 -m django version'
             }
         }
            
