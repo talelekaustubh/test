@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'docker'
+    }
+
+  }
   stages {
     stage('checkout') {
       steps {
@@ -15,13 +20,13 @@ pipeline {
 
     stage('build') {
       steps {
-        sh 'sh \'docker build -t $REPO_NAME:DOCKER-TAG .'
+        sh 'docker build -t $REPO_NAME:DOCKER-TAG .'
       }
     }
 
     stage('push') {
       steps {
-        sh '''sh \'docker push $REPO_NAME:$DOCKER_TAG\'
+        sh '''docker push $REPO_NAME:$DOCKER_TAG
 '''
       }
     }
