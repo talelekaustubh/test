@@ -19,5 +19,12 @@ pipeline {
       }
     }
 
+    stage('push') {
+      steps {
+        sh '''sh \'docker push $REPO_NAME:$DOCKER_TAG\'
+'''
+      }
+    }
+
   }
 }
