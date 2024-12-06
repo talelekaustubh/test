@@ -13,5 +13,11 @@ pipeline {
       }
     }
 
+    stage('build') {
+      steps {
+        sh 'sh \'docker build -t $REPO_NAME:DOCKER-TAG .'
+      }
+    }
+
   }
 }
